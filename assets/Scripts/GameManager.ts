@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab } from 'cc';
+import { _decorator, Component, Node, Prefab, Camera, Vec3, view } from 'cc';
 import { AudioManager } from './AudioManager';
 import { UIManager } from './UIManager';
 import { PoolManager } from './ObjectPool';
@@ -32,12 +32,19 @@ export class GameManager extends Component {
     @property
     defeatScreenDelay: number = 2;
 
+    @property(Camera)
+    adaptiveWorldCamera: Camera | null = null;
+
+    @property({ type: Vec3 })
+    portraitCameraWorldOffset: Vec3 = new Vec3(0, 3, -6);
+
     private static _instance: GameManager = null!;
     private poolManager: PoolManager = null!;
     private _gameState: GameState = GameState.MENU;
     private _coins: number = 0;
     private _unitCost: number = 15;
     public orcKillCount: number = 0;
+    private _adaptiveCamBaseWorldPos: Vec3 | null = null;
 
     public static get instance(): GameManager {
         return this._instance;
@@ -50,7 +57,35 @@ export class GameManager extends Component {
         
         this.poolManager = this.node.addComponent(PoolManager);
         this.initializePools();
+
+        if (this.adaptiveWorldCamera) {
+            this._adaptiveCamBaseWorldPos = this.adaptiveWorldCamera.node.worldPosition.clone();
+            view.on('canvas-resize', this.applyAdaptiveWorldCamera, this);
+            this.applyAdaptiveWorldCamera();
+        }
     }
+
+    onDestroy() {
+        if (this.adaptiveWorldCamera) {
+            view.off('canvas-resize', this.applyAdaptiveWorldCamera, this);
+        }
+    }
+
+    private applyAdaptiveWorldCamera = () => {
+        if (!this.adaptiveWorldCamera || !this._adaptiveCamBaseWorldPos) {
+            return;
+        }
+        const vs = view.getVisibleSize();
+        const portrait = vs.height > vs.width;
+        const base = this._adaptiveCamBaseWorldPos;
+        const off = this.portraitCameraWorldOffset;
+        const camNode = this.adaptiveWorldCamera.node;
+        if (portrait) {
+            camNode.setWorldPosition(base.x + off.x, base.y + off.y, base.z + off.z);
+        } else {
+            camNode.setWorldPosition(base.x, base.y, base.z);
+        }
+    };
 
     private initializePools() {
         if (this.projectilePrefab) {
