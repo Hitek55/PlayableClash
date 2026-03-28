@@ -1,0 +1,44 @@
+# Cocos Creator
+library/
+local/
+temp/
+build/
+jsb-link/
+jsb-default/
+
+# TypeScript
+*.js
+*.js.map
+tsconfig.cocos.json
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+.creator/asset-template/typescript/Custom Script Template Help Documentation.url

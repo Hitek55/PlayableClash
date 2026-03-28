@@ -1,0 +1,194 @@
+{
+  "ver": "2.3.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "354d1847-039c-4da4-b5f1-6c7c4763a4f0",
+  "files": [],
+  "subMetas": {
+    "2e991": {
+      "importer": "gltf-mesh",
+      "uuid": "354d1847-039c-4da4-b5f1-6c7c4763a4f0@2e991",
+      "displayName": "",
+      "id": "2e991",
+      "name": "Circle.001.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 408
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6c855": {
+      "importer": "gltf-material",
+      "uuid": "354d1847-039c-4da4-b5f1-6c7c4763a4f0@6c855",
+      "displayName": "",
+      "id": "6c855",
+      "name": "Orc.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3c6cb": {
+      "importer": "gltf-scene",
+      "uuid": "354d1847-039c-4da4-b5f1-6c7c4763a4f0@3c6cb",
+      "displayName": "",
+      "id": "3c6cb",
+      "name": "Orc_Axe.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "354d1847-039c-4da4-b5f1-6c7c4763a4f0@2e991"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "354d1847-039c-4da4-b5f1-6c7c4763a4f0@6c855"
+      ],
+      "scenes": [
+        "354d1847-039c-4da4-b5f1-6c7c4763a4f0@3c6cb"
+      ]
+    },
+    "materials": {
+      "354d1847-039c-4da4-b5f1-6c7c4763a4f0@6c855": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "c8f66d17-351a-48da-a12c-0212d28575c4",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "USE_ALBEDO_MAP": true
+          },
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {
+              "cullMode": 0
+            },
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "albedoScale": {
+              "__type__": "cc.Vec3",
+              "x": 0.800000011920929,
+              "y": 0.800000011920929,
+              "z": 0.800000011920929
+            },
+            "mainTexture": {
+              "__uuid__": "3fba57a6-fc28-4853-8b1e-56d1069a27d2@6c48a",
+              "__expectedType__": "cc.Texture2D"
+            }
+          },
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      }
+    }
+  }
+}
